@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To The Love of My Life 💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+        :root {
+            --color-primary: #ff6b9d;
+            --color-secondary: #c44569;
+            --color-accent: #feca57;
+            --color-purple: #a29bfe;
+            --color-blue: #74b9ff;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #feca57 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Animated background elements */
+        .sparkle-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 3s infinite;
+            opacity: 0;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        .heart-rain {
+            position: absolute;
+            font-size: 25px;
+            animation: heartFall 6s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes heartFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 40px;
+            padding: 50px;
+            max-width: 700px;
+            width: 100%;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4), 0 0 100px rgba(255, 107, 157, 0.3);
+            position: relative;
+            z-index: 10;
+            animation: containerEntrance 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes containerEntrance {
+            0% {
+                opacity: 0;
+                transform: scale(0.5) rotateY(-180deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateY(0deg);
+            }
+        }
+
+        .main-title {
+            font-family: var(--font-display);
+            text-align: center;
+            font-size: 3.5em;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            animation: titleGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { filter: drop-shadow(0 0 5px rgba(255, 107, 157, 0.5)); }
+            to { filter: drop-shadow(0 0 15px rgba(255, 107, 157, 0.8)); }
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .content-section {
+            margin: 30px 0;
+            padding: 35px;
+            border-radius: 25px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .love-letter {
+            background: linear-gradient(135deg, #fff5f7 0%, #ffe5ec 100%);
+            border: 3px solid var(--color-primary);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.3);
+        }
+
+        .love-letter h2 {
+            font-family: var(--font-display);
+            color: var(--color-secondary);
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .love-letter p {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #333;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .promise-box {
+            background: linear-gradient(135deg, #f8f3ff 0%, #e8e0ff 100%);
+            border: 3px solid var(--color-purple);
+            box-shadow: 0 15px 40px rgba(162, 155, 254, 0.3);
+        }
+
+        .promise-box h2 {
+            font-family: var(--font-display);
+            color: #6c5ce7;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .promise-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            border-left: 5px solid var(--color-purple);
+            box-shadow: 0 5px 15px rgba(162, 155, 254, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .promise-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(162, 155, 254, 0.4);
+        }
+
+        .promise-item .icon {
+            font-size: 2em;
+            margin-right: 15px;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .promise-item .text {
+            font-size: 1.1em;
+            color: #444;
+            display: inline;
+            vertical-align: middle;
+        }
+
+        .memory-wall {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffe9a6 100%);
+            border: 3px solid var(--color-accent);
+            box-shadow: 0 15px 40px rgba(254, 202, 87, 0.3);
+        }
+
+        .memory-wall h2 {
+            font-family: var(--font-display);
+            color: #f39c12;
+            font-size: 2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .memory-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 2px solid rgba(254, 202, 87, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .memory-card:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 35px rgba(243, 156, 18, 0.4);
+        }
+
+        .memory-card h3 {
+            color: var(--color-secondary);
+            font-size: 1.4em;
+            margin-bottom: 12px;
+            font-family: var(--font-display);
+        }
+
+        .memory-card p {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .button-section {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .magical-btn {
+            flex: 1;
+            min-width: 200px;
+            padding: 18px 35px;
+            font-size: 1.1em;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            font-family: var(--font-body);
+        }
+
+        .magical-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .magical-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        .magical-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-pink {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+        }
+
+        .btn-pink:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.5);
+        }
+
+        .btn-purple {
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+        }
+
+        .btn-purple:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(162, 155, 254, 0.5);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+            color: #333;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(254, 202, 87, 0.6);
+        }
+
+        .surprise-message {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #feada6 100%);
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 20px 50px rgba(255, 107, 157, 0.4);
+            animation: pulse 2s infinite;
+            border: 4px solid white;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+
+        .surprise-message h2 {
+            font-family: var(--font-display);
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .surprise-message p {
+            font-size: 1.3em;
+            color: white;
+            line-height: 2;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .emoji-large {
+            font-size: 3em;
+            display: inline-block;
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .tear-message {
+            background: linear-gradient(135deg, #e0f7ff 0%, #d4f1f9 100%);
+            padding: 35px;
+            border-radius: 25px;
+            border: 3px solid #74b9ff;
+            margin: 25px 0;
+            box-shadow: 0 15px 40px rgba(116, 185, 255, 0.3);
+        }
+
+        .tear-message h3 {
+            font-family: var(--font-display);
+            color: #0984e3;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tear-message p {
+            font-size: 1.15em;
+            line-height: 2;
+            color: #2d3436;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 25px;
+            }
+
+            .main-title {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .content-section {
+                padding: 25px 20px;
+            }
+
+            .magical-btn {
+                min-width: 100%;
+            }
+
+            .love-letter p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sparkle-container" id="sparkleContainer"></div>
+
+    <div class="container">
+        <h1 class="main-title">💖 To My Everything 💖</h1>
+        <p class="subtitle">"You are the reason my heart beats and my soul smiles"</p>
+
+        <div class="content-section love-letter">
+            <h2>✨ My Dearest Love ✨</h2>
+            <p>
+                <strong>Every single day</strong> I wake up, I thank the universe for bringing you into my life. You aren't just my girlfriend – you're my <em>home</em>, my <em>peace</em>, my <em>everything</em>. When I look at you, I see my entire future, filled with endless love and beautiful moments.
+            </p>
+            <p>
+                I want you to know that <strong>you've changed my world completely</strong>. Before you, I didn't understand what true love meant. Now I know – it's the way my heart races when you smile, the comfort I feel in your arms, the happiness that fills me just knowing you exist.
+            </p>
+            <p>
+                Your presence has <strong>healed parts of me I didn't even know were broken</strong>. You've taught me what it means to be loved unconditionally, and I promise to spend every day of my life showing you that same love, multiplied a thousand times.
+            </p>
+            <p>
+                <strong>I fall more in love with you every single day</strong>, and just when I think it's impossible to love you more, you prove me wrong. You are my greatest blessing, my answered prayer, my once-in-a-lifetime love.
+            </p>
+        </div>
+
+        <div class="content-section promise-box">
+            <h2>💝 My Forever Promises To You 💝</h2>
+            
+            <div class="promise-item">
+                <span class="icon">🌟</span>
+                <span class="text"><strong>I promise</strong> to always be your safe place, your shoulder to cry on, and your biggest cheerleader in life.</span>
+            </div>
+            
+            <div class="promise-item">
+                <span class="icon">💕</span>
+                <span class="text"><strong>I promise</strong> to love you on your worst days just as much as I love you on your best days.</span>
+            </div>
+            
+            <div class="promise-item">
+                <span class="icon">🌈</span>
+                <span class="text"><strong>I promise</strong> to make you laugh when you're sad and to celebrate every victory, big or small, with you.</span>
+            </div>
+            
+            <div class="promise-item">
+                <span class="icon">✨</span>
+                <span class="text"><strong>I promise</strong> to never let you forget how incredibly beautiful, smart, and amazing you are.</span>
+            </div>
+            
+            <div class="promise-item">
+                <span class="icon">🎯</span>
+                <span class="text"><strong>I promise</strong> to support your dreams with everything I have and watch you conquer the world.</span>
+            </div>
+            
+            <div class="promise-item">
+                <span class="icon">💫</span>
+                <span class="text"><strong>I promise</strong> to choose you, every single day, for the rest of my life.</span>
+            </div>
+        </div>
+
+        <div class="button-section">
+            <button class="magical-btn btn-pink" onclick="showSurprise()">
+                <span>💝 Click For Something Special</span>
+            </button>
+            <button class="magical-btn btn-purple" onclick="showTearMessage()">
+                <span>😭 Read This When Sad</span>
+            </button>
+            <button class="magical-btn btn-gold" onclick="showMemories()">
+                <span>🌟 Our Beautiful Story</span>
+            </button>
+        </div>
+
+        <div id="dynamicContent"></div>
+
+        <div class="content-section memory-wall">
+            <h2>📖 Moments I'll Treasure Forever 📖</h2>
+            
+            <div class="memory-card">
+                <h3>🌅 The Day We Met</h3>
+                <p>The universe knew exactly what it was doing when it brought us together. That moment changed my life forever, and I wouldn't change a single thing about it.</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>💫 Your First Smile At Me</h3>
+                <p>When you first smiled at me, time stopped. In that moment, I knew you were going to be someone incredibly special in my life. That smile still melts my heart every single day.</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>🌙 Our Late Night Talks</h3>
+                <p>Those hours we've spent talking about everything and nothing – they're my favorite moments. With you, I can be completely myself, and that's the greatest gift.</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>❤️ Every "I Love You"</h3>
+                <p>Each time we say "I love you," it means more than the last. These three words hold our entire universe, and I'll never get tired of saying them to you.</p>
+            </div>
+            
+            <div class="memory-card">
+                <h3>🎭 Every Laugh We've Shared</h3>
+                <p>Your laugh is the most beautiful sound in my world. All our inside jokes, our silly moments, our uncontrollable laughter – these are the treasures of my heart.</p>
+            </div>
+        </div>
+
+        <div class="content-section" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%); border: 3px solid #fdcb6e;">
+            <h2 style="text-align: center; color: #d63031; font-family: var(--font-display); font-size: 2.2em; margin-bottom: 25px;">
+                💌 Final Words From My Heart 💌
+            </h2>
+            <p style="font-size: 1.2em; line-height: 2; color: #2d3436; text-align: center; font-weight: 500;">
+                You are <strong>not just my girlfriend</strong> – you are my best friend, my partner in crime, my comfort zone, my adventure, my safe haven, my greatest love story. 
+                <br><br>
+                <strong style="color: #d63031; font-size: 1.3em;">I choose you today, tomorrow, and forever. 💕</strong>
+                <br><br>
+                <em>Thank you for being YOU. Thank you for loving ME. Thank you for US.</em>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Create sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            document.getElementById('sparkleContainer').appendChild(sparkle);
+
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+
+        // Create heart rain
+        function createHeartRain() {
+            const hearts = ['💖', '💕', '💗', '💓', '💝', '❤️', '💘'];
+            const heart = document.createElement('div');
+            heart.classList.add('heart-rain');
+            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.getElementById('sparkleContainer').appendChild(heart);
+
+            setTimeout(() => heart.remove(), 8000);
+        }
+
+        // Show surprise message
+        function showSurprise() {
+            const content = document.getElementById('dynamicContent');
+            const surprises = [
+                {
+                    title: "You Are My Miracle 🌟",
+                    message: "Out of billions of people in this world, I found YOU. That's not luck – that's destiny. You're my once-in-a-lifetime miracle, and I'll never take you for granted. Every moment with you is a gift I'll treasure forever."
+                },
+                {
+                    title: "My Heart Belongs To You 💗",
+                    message: "Before you, my heart was just beating. Now it's ALIVE. You've filled it with so much love, joy, and happiness that it overflows. You don't just have my heart – you ARE my heart."
+                },
+                {
+                    title: "You Complete Me 💫",
+                    message: "They say no one completes you, but you do. You make me whole in ways I never knew I needed. With you, I'm the best version of myself. Thank you for making me feel complete."
+                },
+                {
+                    title: "Forever Isn't Long Enough ⏰",
+                    message: "If I had forever with you, it still wouldn't be enough time to show you how much I love you. But I promise to spend every second of my life trying. You deserve infinite love, and I'll give you everything I have."
+                }
+            ];
+
+            const surprise = surprises[Math.floor(Math.random() * surprises.length)];
+
+            content.innerHTML = `
+                <div class="surprise-message">
+                    <h2>${surprise.title}</h2>
+                    <p>${surprise.message}</p>
+                    <div style="margin-top: 30px;">
+                        <span class="emoji-large">💕</span>
+                    </div>
+                </div>
+            `;
+
+            // Create heart explosion
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => createHeartRain(), i * 150);
+            }
+
+            content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Show tear message (for when she's sad)
+        function showTearMessage() {
+            const content = document.getElementById('dynamicContent');
+            
+            content.innerHTML = `
+                <div class="tear-message">
+                    <h3>💙 When You're Feeling Down, Remember This 💙</h3>
+                    <p style="font-size: 1.3em; font-weight: 600; margin-bottom: 20px;">
+                        My beautiful love, I see you. I see your pain, your struggles, your tears. And I want you to know:
+                    </p>
+                    <p>
+                        <strong>You are NOT alone.</strong> I'm here, right beside you, holding your hand through every storm. Your pain is my pain, and I'll carry it with you.
+                    </p>
+                    <p>
+                        <strong>You are STRONGER than you know.</strong> I've watched you overcome so much, and I'm in awe of your resilience. This too shall pass, and I'll be here when it does.
+                    </p>
+                    <p>
+                        <strong>You are LOVED beyond measure.</strong> On your worst days, when you feel unlovable, remember that my love for you doesn't waver. It's constant, unconditional, and eternal.
+                    </p>
+                    <p>
+                        <strong>You are MY EVERYTHING.</strong> The world may feel heavy, but you make MY world light up. Your existence is a blessing, and I need you to know how much you matter.
+                    </p>
+                    <p style="font-size: 1.4em; font-weight: 700; margin-top: 25px; color: #0984e3;">
+                        Cry if you need to. I'll be here to wipe your tears and remind you how incredibly precious you are. 😭💙
+                    </p>
+                </div>
+            `;
+
+            // Gentle sparkle effect
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => createSparkle(), i * 100);
+            }
+
+            content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Show more memories
+        function showMemories() {
+            const content = document.getElementById('dynamicContent');
+            
+            const moreMemories = [
+                {
+                    title: "🎵 Our Song",
+                    text: "Every time I hear music that reminds me of you, my heart skips a beat. You've made life feel like a beautiful melody."
+                },
+                {
+                    title: "🌺 The Little Things",
+                    text: "The way you scrunch your nose when you laugh, how you bite your lip when you're thinking – I notice everything, and I love it all."
+                },
+                {
+                    title: "🎁 Every Gift, Every Gesture",
+                    text: "It's not about what you give me, but the thought and love behind it. You make me feel special in ways no one else ever has."
+                },
+                {
+                    title: "🌃 Every Goodbye",
+                    text: "Even our goodbyes are special because I know I'll see you again. But honestly, every second apart from you feels too long."
+                },
+                {
+                    title: "🎨 Your Creativity",
+                    text: "The way your mind works amazes me. You see beauty where others don't, and you've taught me to see the world through your eyes."
+                },
+                {
+                    title: "🌻 Your Strength",
+                    text: "You've been through so much, yet you still smile, still love, still shine. Your strength inspires me every single day."
+                }
+            ];
+
+            let memoriesHTML = '<div style="margin: 25px 0;">';
+            moreMemories.forEach(memory => {
+                memoriesHTML += `
+                    <div class="memory-card">
+                        <h3>${memory.title}</h3>
+                        <p>${memory.text}</p>
+                    </div>
+                `;
+            });
+            memoriesHTML += '</div>';
+
+            content.innerHTML = memoriesHTML;
+
+            // Create heart rain
+            for (let i = 0; i < 10; i++) {
+                setTimeout(() => createHeartRain(), i * 200);
+            }
+
+            content.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // Auto-create ambient effects
+        setInterval(() => {
+            if (Math.random() > 0.6) createSparkle();
+            if (Math.random() > 0.8) createHeartRain();
+        }, 2000);
+
+        // Initial effects on load
+        window.addEventListener('load', () => {
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => createSparkle(), i * 100);
+            }
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => createHeartRain(), i * 500);
+            }
+        });
+    </script>
+</body>
+</html>
